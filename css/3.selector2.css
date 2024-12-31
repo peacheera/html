@@ -1,0 +1,81 @@
+/* 가상 선택자(Pseudo class selector) */
+
+a:link{font-size: 2em;}
+
+a:visited {color: rgb(228, 132, 132);}
+
+a:hover{color: rgb(161, 161, 223);}
+
+a:active{color: rgb(226, 226, 192);}
+
+
+/* input[type ="checkbox"]:checked{background-color: rgb(197, 228, 255);} */
+
+input[type="text"]:enabled{
+    border: 3px solid olive;}
+
+input[type="text"]:disabled{
+    border: 3px solid rgb(197, 197, 180);
+}
+
+/* 자식중 첫번째 */
+ul > li:first-child{ 
+    font-size: 1em;
+}
+/* 자식중 마지막 */
+ul > li:last-child{
+    font-size: 4em;
+}
+/* 자식중 앞에서 두번째 */
+ul > li:nth-child(2){
+    font-size: 2em;
+}
+/* 자식중 뒤에서 두번째 */
+ul > li:nth-last-child(2){
+    font-size: 3em;
+}
+/* li타입 중 첫번째 */
+ul > li:first-of-type{ 
+    color: rgb(255, 0, 0);
+}
+
+/* li타입 중 마지막 */
+ul > li:last-of-type{ 
+    color: rgb(146, 12, 255);
+}
+
+/* li타입 중 첫번째 */
+ul > li:nth-of-type(1){ 
+    border: 2px solid rgb(255, 202, 202);
+}
+
+/* li타입 중 마지막 */
+ul > li:nth-last-of-type(1){ 
+    border: 2px solid rgb(231, 150, 255);
+}
+
+/* div 자손중 input이 아닌것 */
+div :not(input){
+    font-style: italic;
+}
+
+/* 첫글자 앞 */
+p::first-letter{
+    color: rgb(182, 148, 182); font-size: 2em;
+}
+/* 첫번째 라인 */
+p::first-line{
+    text-decoration:underline;
+}
+/* 컨텐츠 앞에 추가 */
+p::after{
+    content: '[끝]';
+}
+/* 컨텐츠 뒤에 추가 */
+p::before{
+    content: '[시작]';
+}
+/* 마우스로 드래그된 것 */
+p::selection{
+    color: rgb(126, 126, 126);
+}

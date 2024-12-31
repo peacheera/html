@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tableelement</title>
+    <style>
+        caption {font-size: 25px; font-weight: bold;}
+        table, th, td {border: 1px solid brown; border-collapse:collapse;}
+        thead {background-color: rgb(255, 227, 227);}
+        tfoot{background-color: rgb(255, 238, 238);}
+        tbody{background-color: rgb(255, 255, 255);}
+        th, td {width: 60px; height: 25px; text-align:center;}
+    </style>
+</head>
+<body>
+    <table>
+        <!-- 테이블제목 -->
+    <caption>성적표</caption>
+        <!-- 데이블의 컬럼명 -->
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+            </tr>
+        </thead>
+        <!-- 테이블 데이터 영역 -->
+        <tbody>
+            <tr>
+                <th>홍길동</th>
+                <th>100</th>
+                <th>100</th>
+                <th>100</th>
+            </tr>
+            <tr>
+                <th>강감찬</th>
+                <th>90</th>
+                <th>90</th>
+                <th>90</th>
+            </tr>
+            <tr>
+                <th>이순신</th>
+                <th>80</th>
+                <th>80</th>
+                <th>80</th>
+            </tr>
+        </tbody>
+        <!-- 테이블 요약 정보 -->
+        <tfoot>
+            <tr>
+                <td>총점</td>
+                <td>270</td>
+                <td>270</td>
+                <td>270</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <table>
+        <caption>span</caption>
+        <thead>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2"></td> <!--열-->
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2"></td> <!--줄-->
+                <td></td>
+                <td colspan="2" rowspan="2"></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<table>
+    <caption>실습</caption>
+    <thead>
+        <tr>
+            <td colspan="2">부서/성명/아이디</td>
+            <td colspan="2">분기별 연봉</td>
+            <td>비고</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2">인사과</td>
+            <td>홍길동</td>
+            <td>3/4</td>
+            <td>1000</td>
+            <td>동결</td>
+        </tr>
+        <tr>
+            <td>HONG</td>
+            <td>4/4</td>
+            <td>1200</td>
+            <td>23%인상</td>
+        </tr>
+        <tr>
+            <td rowspan="2">기획과</td>
+            <td>이순신</td>
+            <td>3/4</td>
+            <td>2000</td>
+            <td>동결</td>
+        </tr>
+        <tr>
+            <td>LEE</td>
+            <td>4/4</td>
+            <td>2200</td>
+            <td>10%인상</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

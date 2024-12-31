@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form element</title>
+    <style>
+        /* input{display: block;} */
+    </style>
+</head>
+<body>
+    <!-- 
+     서버에 전송할 데이터 폼
+     action: 데이터를 전송할 서버의URL
+     method: HTTP Method (=Request Method), Get/Post/Put/Petch/Delete
+     -->
+
+    <form action="10.formelement.html" method="get">
+        <input type="button" value="버튼">
+        <br><input type="checkbox" name="male" value="male">남
+        <input type="checkbox" name="female" value="male">여
+        <br><input type="color" name="color">
+        <br><input type="date" name="date">
+        <br><input type="datetime-local" name="datetime-local">
+        <br><input type="email" name="email">
+        <br><input type="file" name="file">
+        <br><input type="hidden" name="hidden" value="hiddenvalue"> 
+        <!-- <input type="image" name="image" value="image" src="assets/blob.jpg"> -->
+        <br><input type="month" name="month">
+        <br><input type="number" name="number">
+        <br><input type="password" name="password">
+        <br><input type="radio" name="radio" value="apple">사과
+        <input type="radio" name="radio" value="apple">복숭아
+        <input type="radio" name="radio" value="apple">딸기
+        <br><input type="range" name="range">
+        <br><input type="search" name="search">
+        <br><input type="tel" name="tel">
+        <br><input type="text" name="text">
+        <br><input type="time" name="time">
+        <br><input type="url" name="url">
+        <br><input type="week" name="week">
+
+        <br><select name="select">
+         <optgroup label="과일">
+            <option value="apple">사과</option>
+             <option value="peach">복숭아</option>
+             <option value="strawberry">딸기</option>
+         </optgroup>
+         <optgroup label="동물">
+            <option value="lion">사자</option>
+             <option value="tiger">호랑이</option>
+             <option value="dear">사슴</option>
+            </select>
+
+        <br><textarea rows="10" cols="20">여기에 입력</textarea>
+        <br><fieldset>
+            <legend>회원가입폼</legend>
+            아이디: <input type="text" name="uid" >
+            비밀번호: <input type="password" name="password">
+        </fieldset>
+        <br><input type="reset" value="폼 초기화">
+        <br><input type="submit" value="폼데이터전송">
+<!-- http://127.0.0.1:5500/html/10.formelement.html
+?female=male
+&color=%23db8a8a
+&date=2024-08-10
+&datetime-local=2024-12-31T11%3A41
+&email=rlagmlfk98z%40gmail.com
+&file=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EA%B0%95%EB%82%A8%EA%B5%AC+%ED%9D%A1%EC%97%B0+%EB%AF%BC%EC%9B%90%EB%B0%8F%EB%8B%A8%EC%86%8D%EA%B1%B4%EC%88%98.txt
+&hidden=hiddenvalue
+&month=2024-02
+&number=3
+&password=1234
+&radio=apple
+&range=50
+&search=%EB%B0%94%EB%B3%B4
+&tel=naver.com
+&text=01093456666
+&time=00%3A42
+&url=http%3A%2F%2F127.0.0.1%3A5500%2Fhtml%2F10.formelement.html%3Fcolor%3D%2523000000%26date%3D%26datetime-local%3D%26email%3D%26file%3D%26hidden%3Dhiddenvalue%26month%3D2024-02%26number%3D%26password%3D%26range%3D50%26search%3D%26%25ED%258F%25BC%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EC%25A0%2584%25EC%2586%25A1%3D%25EC%25A0%259C%25EC%25B6%259C
+&week=2024-W50
+&%ED%8F%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%EC%86%A1=%EC%A0%9C%EC%B6%9C -->
+
+    </form>
+</body>
+</html>

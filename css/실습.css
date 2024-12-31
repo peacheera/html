@@ -1,0 +1,14 @@
+*{font-size: 20;}
+
+li{list-style: none;}
+
+#우리집고양이{font-weight: bold;}
+
+ul{color: palevioletred;}
+input[type~="week"]{color: rgb(255, 76, 76);}
+input[type="month"]{color: rgb(173, 241, 224);}
+
+.검은고양이{color: rgb(0, 0, 0);}
+.노란고양이{color: rgb(226, 192, 43);}
+.하얀강아지{color: rgb(255, 255, 255); background-color: rgb(80, 80, 80);}
+
