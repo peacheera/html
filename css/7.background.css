@@ -1,0 +1,23 @@
+body{
+    background-image: url(../html/assets/images.jfif);
+    /* background-repeat: repeat; */
+    /* background-repeat: no-repeat; */
+    background-size: 20%;
+    /* background-size: contain; */
+    background-attachment: fixed;
+}
+
+div{
+    position: center;
+    background-color: rgb(255, 228, 140); 
+    font-weight: bold;
+    font-size: 40px;
+    height: auto;
+    width: 400;    
+}
+
+p{
+    background-image: url(../html/assets/images.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+}

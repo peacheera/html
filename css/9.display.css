@@ -1,0 +1,45 @@
+*{
+    margin: 0; padding: 0;
+}
+
+div#outer{
+    
+    background-color: rgb(235, 247, 255);
+    position: relative;
+    left: 200px;
+    top: 200px;
+}
+div.inner{
+    width: 100px;
+    height: 100px;
+    /* 좌우의 중간 */
+    text-align: center;
+    /* 상하의 중간 */
+    line-height: 100px;
+}
+
+/* 기본값은 static(위>아래, 왼쪽>오른쪽)이므로 
+    position(relative)변경 후 
+    top, bottom, left, right)을 사용하여 위치를 이동 */
+#inner1{
+    background-color: rgb(76, 18, 131);
+    position: relative;
+    top: 100px;
+    left: 100px;
+    /* z-index가 클 수록 사람쪽으로 내려옴 */
+    z-index: 1;
+}
+#inner2{
+    background-color: rgb(168, 75, 255);
+    /* 가장 가까운 스테틱이 아닌 부모를 기준으로 함 */
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 2;
+}
+#inner3{
+    /* 스크롤을 내려도 고정이 되어 스크롤의 영향을 받지 않는값 */
+    background-color: rgb(203, 175, 230);
+    position: fixed;
+    
+}

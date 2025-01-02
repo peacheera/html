@@ -1,0 +1,38 @@
+/* inline and block 
+    양옆으로 배치, 영역도 가지도록*/
+    
+*{margin: 0; padding: 0;}
+
+p{
+    display: inline-block;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+#p1{ 
+    background-color: rgb(190, 255, 230);
+    width: 200px; /* 컨텐츠 넓이 */
+    height: 100px;/* 컨텐츠 높이 */
+}
+
+#p2{ 
+    background-color: rgb(255, 93, 125);
+    border-width:10px;
+    border-top: 10px;
+    border-right: 10px;
+    border-color: rgb(186, 255, 255);
+    border-style: dashed;
+    border-radius: 10px;
+    
+}
+
+#p3{ 
+    background-color: rgb(190, 231, 255);
+    border-color: rgb(245, 177, 177);
+    border-top: 50px solid rgb(231, 255, 192);
+    border-right: 50px solid rgb(252, 138, 138);
+    border-bottom: 50px solid rgb(156, 111, 118);
+    border-left: 50px solid rgb(117, 96, 117);
+    border-radius: 0 25px 25px 0;
+}
