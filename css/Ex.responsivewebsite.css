@@ -1,0 +1,120 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box; 
+}
+
+#web{
+    background-image: url(../html/assets/페인트.img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100% ;
+    width: 100%;
+    /* margin-left: 500px; */
+    border: 1px solid black;
+}
+
+.flex-container {
+    background-color:  rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .flex-item {
+      color: rgb(253, 253, 253);
+      font-weight: bold;
+      display: inline-block; 
+      padding: 5px 10px;
+      font-size: 20px;
+      width: 120px;
+      letter-spacing: 0.2em;;
+  }
+
+  .flex-container2 {
+      width: 200px;    
+      height: 400px;
+      background-color: rgb(230, 230, 230);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      float: left;
+    }
+
+
+.flex-item2 {
+    border: 1px solid black;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.2em;
+    font-size: 20px;
+    list-style-type: none;
+    text-align:  center;
+    line-height: 98px;
+    
+}
+
+h1{
+    font-size: 140px;
+    color: rgb(255, 0, 0);
+    text-shadow: 5px 5px 3px black;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#loginlink{
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    float: right;
+    margin-right: 5px;
+}
+
+
+#contents{
+    height: 400px;
+    width: 800px;
+    float: left;    
+}
+#pcontent{
+    margin: 4px;
+}
+
+footer{
+    clear: left;
+}  
+#copyriht{
+    font-size: 10px;
+    text-align: right;
+}
+
+.menu-toggle{
+    float: right;
+}
+
+@media screen and (max-width: 480px){
+        .siteName{
+           font-size: 30px;
+        }
+        #flex-container2{
+            width: 20px;
+        }
+        #loginlink{
+            display: none;
+        }
+        #contents{
+            width: 20px;
+        }
+        .flex-container2{
+            display: none;
+        }
+    }
+
+/* @media screen and (max-width: 1224px) {
+        
+}
+
+@media screen and (max-width: 1820px) {
+
+} */
