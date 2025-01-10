@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+</head>
+<body>
+    <script>
+        //웹브라우져 환경에서 전역객체는 window
+        var v=1;
+        console.log(v);
+        console.log(window.v);
+        document.write(v);
+        function print(){
+            console.log('print 함수 호출');
+        }
+        print(); // 저녁
+
+        window.print();
+
+        alert('hi');
+            window.alert('ho');
+
+            //전연객체 사용을 피하기 위해 객체를 생성해서
+            //변수나 함수를 객체의 프라퍼티라 한다.
+            const obj = {};
+            obj.v = 1;
+            obj.func = function(){
+                console.log('함수 호출됨');
+                
+            }
+            console.log(obj.v);
+            obj.func();
+    </script>
+</body>
+</html>

@@ -16,3 +16,35 @@ i=3//문장
 // {name: '홍길동', age: 20} //표현식
 // {name: '홍길동', age: 20}; //문장
 const obj = {name: '홍길동', age: 20}; // 문장
+
+var v = 1;
+function func(){
+    console.log(v);//1
+}
+func();
+//--------------------------------
+var v2 = 2;
+function func2(){
+    console.log(v2);//undefined
+    var v2 =3;
+}
+func2();
+
+
+
+
+
+console.log(v);//un
+function outer(){
+    console.log(v);//un
+    function inner(){
+        console.log(v);//un
+        var v = 'inner'//inner
+        console.log(v);
+    }
+    var v = 'outer';
+    inner();
+    console.log(v);//out
+}
+outer();
+var v = 'global';
