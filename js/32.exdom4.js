@@ -1,37 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const fileListDiv = document.getElementById('fileList'); // 파일 리스트를 담을 컨테이너
-    
-    // 첫 번째 파일 선택 세트 추가
-    addFileSet();
+// const pButton = document.querySelector('[data-btn-type="+"]');
+// const mButton = document.querySelector('[data-btn-type="-"]');
+const nameList = document.querySelector("#nameList");
+const fileList = document.querySelector("#fileList");
+const fileInput = document.querySelector('input[type="file"]');
 
-    // '+' 버튼 클릭 시 새로운 파일 선택 세트를 추가하는 함수
-    function addFileSet() {
-        const fileSetDiv = document.createElement('div');
-        fileSetDiv.classList.add('file-set');
-        
-        // 파일 선택 입력 요소 생성
-        const fileInput = document.createElement('input');
-        fileInput.type = 'file';
-        
-        // '+' 버튼 생성
-        const addButton = document.createElement('button');
-        addButton.textContent = '+';
-        
-        // '-' 버튼 생성
-        const removeButton = document.createElement('button');
-        removeButton.textContent = '-';
-        
-        // '+' 버튼 클릭 시 새로운 파일 선택 필드 추가
-        addButton.addEventListener('click', () => {
-            addFileSet(); // 새로운 파일 선택 세트를 추가
-        });
-        
-        // '-' 버튼 클릭 시 해당 파일 선택 세트 삭제
-        removeButton.addEventListener('click', () => {
-            fileSetDiv.remove(); // 해당 세트 삭제
-        });
-            
-            // 파일 선택, +, - 버튼들을 파일 세트에 추가
-            fileSetDiv.appendChild(fileInput);
-        });
-               
+function handleFileSelection(event) {
+  const file = event.target.files[0]; // 선택된 첫 번째 파일 가져오기
+
+  if (file) {
+    // 파일 이름을 새로운 div로 만들어 표시
+    const fileItem = document.createElement("div");
+    fileItem.textContent = file.name;
+    nameList.appendChild(fileItem);
+  }
+}
+
+fileList.addEventListener("click", (event) => {
+  switch (event.target.dataset.btnType) {
+    case "+":
+      const filefunction = document.createElement("div");
+      filefunction.innerHTML = `
+        <input type="file">&nbsp;
+        <button data-btn-id="0" data-btn-type="+">+</button>
+        <button data-btn-id="0" data-btn-type="-">-</button>
+      `;
+
+      fileList.appendChild(filefunction);
+      break;
+
+    case "-":
+      const rowToDelete = event.target.closest("div");
+      rowToDelete.remove();
+      break;
+  }
+});
+// fileList에서 change 이벤트 위임 처리
+fileList.addEventListener("change", (event) => {
+  if (event.target.type === "file") {
+    // input[type="file"]인지 확인
+    handleFileSelection(event);
+  }
+});
