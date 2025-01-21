@@ -89,5 +89,5 @@ const xhrUtil = {
 const desc = document.querySelector('#desc')
 document.querySelector('#desc').addEventListener('click', e => {
     users.sort((a, b) => b.id - a.id);
-    document.querySelector(users);
+    document.querySelector();
 });

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+</head>
+<body>
+    <pre></pre>
+    <script>
+        const xhr = new XMLHttpRequest();
+        //List Request Method :GET방식 요청, URL:/persons
+        xhr.open('GET', '/persons');
+        //GET일때는 보내는 데이터가 없음으로 send()
+        xhr.send();
+        xhr.onload = () => {
+            if(xhr.status == 200){
+                document.querySelector('pre').textContent = xhr.response;
+            }else{
+                console.error('엑시던트 발생', xhr.status, xhr.statusText);
+            }
+        };
+    </script>
+</body>
+</html>
