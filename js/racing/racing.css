@@ -1,0 +1,66 @@
+*{ margin: 0; padding: 0; }
+h1{
+    font-size: 30px;
+    padding: 20px 0;
+    color: aliceblue;
+}
+
+header{
+    background-color:  #291706;
+    text-align: center;
+}
+footer >p{
+    font-size: 15px;
+    font-weight: bold;
+}
+footer{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+}
+
+#wrapper{
+    width: 1024px;
+    height: 800px;
+    background-color: #291706;
+    border: 5px solid rgb(82, 81, 81);
+    margin: 0 auto;
+}
+img{
+    display: inline-block;
+    width: 200px;
+}
+#ground{
+    height: 645px;
+    width: 1024px;
+    /* background-color: rgb(142, 79, 79); */
+    background-image: url(./backgroundimg/바닥1.jpg);
+}
+
+#board{
+    height: 100px;
+    text-align: center;
+}
+#board > p{
+    height: 100px;
+    line-height: 60px;
+    color: rgb(61, 61, 61);
+    font-size: 24px;
+    font-weight: bold;
+    color: aliceblue;
+}
+#start{
+    line-height: 35px;
+    font-size: 24px;
+    font-weight: bold;
+}
+#level, #start, #reset > button{
+    height: 40px;
+    font-size: 20px;
+}
+
+#horse1,#horse2,#horse3,#horse4{
+    position: relative;
+    padding: 20px;
+}

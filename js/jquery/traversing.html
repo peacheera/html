@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+     $(function(){
+    // 1. $("ul").parent()[0]: <ul> 요소의 부모 요소를 찾고 첫 번째 부모 요소를 출력
+    console.log($("ul").parent()[0]);
+    // 2. $("li:first").parents(): 첫 번째 <li> 요소의 모든 부모 요소들을 찾음 (부모 트리 탐색)
+    console.log($("li:first").parents());
+    // 3. $("li:first").parentsUntil("div"): 첫 번째 <li> 요소의 부모 요소 중 <div> 요소를 만날 때까지 부모를 탐색
+    console.log($("li:first").parentsUntil("div"));
+    // 4. $("ul").children(): <ul>의 모든 자식 요소들(즉, <li>들)을 찾음
+    console.log($("ul").children());
+    // 5. $("ul").find("li:last"): <ul> 요소 내에서 마지막 <li> 요소를 찾음
+    console.log($("ul").find("li:last"));
+    // 6. $("li:eq(1)").siblings(): 두 번째 <li>의 형제 요소들을 찾음 (즉, 첫 번째와 세 번째 <li>)
+    console.log($("li:eq(1)").siblings());
+    // 7. $("li:eq(1)").next().text(): 두 번째 <li>의 다음 형제 요소의 텍스트를 출력 (즉, 세 번째 <li>)
+    console.log($("li:eq(1)").next().text());
+    // 8. $("li:eq(1)").prev().text(): 두 번째 <li>의 이전 형제 요소의 텍스트를 출력 (즉, 첫 번째 <li>)
+    console.log($("li:eq(1)").prev().text());
+    // 9. $("li:first").nextAll(): 첫 번째 <li>의 모든 다음 형제 요소들을 찾음
+    console.log($("li:first").nextAll());
+    // 10. $("ul li").first(): <ul> 내에서 첫 번째 <li> 요소를 찾음
+    console.log($("ul li").first());
+    // 11. $("ul li").last(): <ul> 내에서 마지막 <li> 요소를 찾음
+    console.log($("ul li").last());
+    // 12. $("li").filter(".li"): 클래스 "li"를 가진 <li> 요소들을 찾음
+    console.log($("li").filter(".li"));
+    // 13. $("li").not(".li"): 클래스 "li"를 가지지 않은 <li> 요소들을 찾음
+    console.log($("li").not(".li"));
+});
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="li">1</li>
+            <li>2</li>
+            <li class="li">3</li>
+        </ul>
+</div>
+</body>
+</html>

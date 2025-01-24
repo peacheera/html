@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+       $(function(){
+            console.log($("p").text());//textContent
+            console.log($("p").html());//innerHTML
+            //속성값 변경 구글로이동>네이버로 이동
+            console.log($("a").attr("href","https://www.naver.com"));
+            $("a").append("append"); // 요소의 컨텐츠 앞
+            $("a").prepend("prepend"); // 요소의 컨텐츠 뒤
+            $("a").after("after"); //요소 뒤
+            $("a").before("before"); // 요소 앞
+            $("button").click(e =>{
+                console.log($("#txt").val());
+                $("a").remove();
+            })
+       });
+    </script>
+</head>
+<body>
+    <p>
+        <a href="https://www.google.com">구글로 이동</a><br>
+        <input id="txt" type="text">&nbsp;<button>클릭</button>
+    </p>
+</body>
+</html>

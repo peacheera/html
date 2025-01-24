@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>racing game</title>
+        <link rel="stylesheet" href="racing.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            
+            let started = false; 
+            let speedRate = 1.0;
+            
+            let interval1 = null;
+            let interval2 = null;
+            let interval3 = null;
+            let interval4 = null;
+            
+
+            const rate = [];
+        
+        $(function(){
+            $("#horse1").css('left' , '0px');
+            $("#horse2").css('left' , '0px');
+            $("#horse3").css('left' , '0px');
+            $("#horse4").css('left' , '0px');
+        });
+
+        $(function(){
+            $("#start").click( e=>{
+                $("#start").prop('disabled' ,'true');
+                $("#level").prop('disabled', 'true');
+                $("#result").text("STARTED! PRESS SPACE KEY OR B KEY!");
+                comStart();
+            })
+        });
+        
+
+        const comStart = () => {
+            interval1 = setInterval(run, Math.ceil(Math.random()*50) + 100, 
+        $("#horse1"), speedRate);
+            interval2 = setInterval(run, Math.ceil(Math.random()*50) + 100, 
+        $("#horse2"), speedRate);
+            interval3 = setInterval(run, Math.ceil(Math.random()*50) + 100, 
+        $("#horse3"), speedRate);
+            started =true;
+        };
+
+        $(function(){
+        $("#level").change (function (e) {
+        switch (e.target.value) {
+        case "medium":
+            speedRate = 1.2;
+            break;
+            case "hard":
+            speedRate = 1.5;
+               }
+            });
+        });
+
+        const run = function(horse, speedRate=1.0) {
+            const currLeft = parseInt(horse.css("left").substring(0, horse.css("left").length - 2));
+            if (currLeft > 820) {
+                if (horse.attr("id") == "horse1") {
+                    clearInterval(interval1);
+                    rate.push(1);
+                }
+                if (horse.attr("id")=="horse2") {
+                    clearInterval(interval2);
+                    rate.push(2);
+                }
+                if (horse.attr("id")=="horse3") {
+                    clearInterval(interval3);
+                    rate.push(3);
+                }
+                
+            }
+            horse.css("left", (currLeft + 
+                Math.ceil(Math.random() * speedRate * 17) + 8) + 'px');
+            printResult();
+        };
+        
+        
+        $(document).keyup (e => {
+            if(started){
+            const horse4Left 
+            = parseInt($("#horse4").css("left").substring(0, $("#horse4").css("left").length-2));
+            if (horse4Left < 820) {
+            if (e.originalEvent.code === 'Space') {
+                $("#horse4").css("left",(horse4Left + 18)+ 'px');
+            }
+            if (e.originalEvent.code  === 'KeyB') {
+                $("#horse4").css("left", (horse4Left + 36)+ 'px');
+            }
+        } else {
+            if (rate.length!=4) {
+                if (rate.indexOf(4)==-1) rate.push(4);
+            }
+            printResult();
+            }
+        }
+    });
+
+    const printResult = () => {
+    if (rate.length==4) {
+        let printStr = "";
+        for (let i=0; i<rate.length; i++) {
+            printStr += (i+1) + "등 : " + rate[i] + "레인&nbsp;&nbsp;&nbsp;"
+        }
+        $("#result").html(printStr);
+    }
+};
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1>::: RACING GAME :::</h1>
+    </header>
+    <div id="ground">
+        <p id="horse1"><img src="./backgroundimg/KakaoTalk_20250123_114706720.gif"></p>
+            <p id="horse2"><img src="./backgroundimg/KakaoTalk_20250123_114706720.gif"></p>
+            <p id="horse3"><img src="./backgroundimg/KakaoTalk_20250123_114706720.gif"></p>
+            <p id="horse4"><img src="./backgroundimg/KakaoTalk_20250123_114706720.gif"></p>
+    </div>
+    <div id="board">
+        <p>
+            <button id="reset" onclick="location.reload();">RESET</button>
+            난이도&nbsp;<select id="level">
+                <option value="easy">EASY</option>
+                <option value="medium">MEDIUM</option>
+                <option value="hard">HARD</option>
+            </select>&nbsp;
+            <button id="start">START</button>&nbsp;
+            <span id="result">RESULT : </span>
+        </p>
+    </div>
+    <footer>
+        <p>Copyright It'me 2025</p>
+    </footer>
+</div>
+</body>
+</html>
